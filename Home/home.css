@@ -1,0 +1,79 @@
+.navbar {
+    background-color: #1c1c1c; 
+  }
+  .navbar-brand {
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center; 
+  }
+
+  .navbar-brand:hover{
+    color: white;
+    font-size: 21px;
+  }
+
+  .navbar-brand svg {
+    margin-right: 10px; 
+  }
+
+  
+  .navbar .btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: 600;
+  }
+  .form-control {
+    border-radius: 50px; 
+    padding-left: 20px;
+    width: 500px;
+  }
+  .search-wrapper {
+    position: relative;
+  }
+  .search-wrapper .search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ccc;
+  }
+
+
+  /*Tarjetas*/
+
+  .carousel{
+    margin: 100px;
+  }
+
+  .card {
+    margin-bottom: 20px;
+   
+  }
+  .card-title {
+    font-weight: bold;
+  }
+  .card-text {
+    color: #888;
+  }
+  .views-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    color: #888;
+  }
+  .views-time .icon-eye {
+    margin-right: 5px;
+  }
+
+
+  .carousel-control-prev-icon{
+    margin-right: 100px;
+  }
+
+  .carousel-control-next-icon{
+    margin-left: 80px;
+
+  }

@@ -1,0 +1,73 @@
+.navbar {
+    background-color: #1c1c1c; 
+  }
+  .navbar-brand {
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center; 
+  }
+
+  .navbar-brand:hover{
+    color: white;
+    font-size: 21px;
+  }
+
+  .navbar-brand svg {
+    margin-right: 10px; 
+  }
+
+
+  .navbar .btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: 600;
+  }
+  .form-control {
+    border-radius: 50px; 
+    padding-left: 20px;
+    width: 500px;
+  }
+  .search-wrapper {
+    position: relative;
+  }
+  .search-wrapper .search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ccc;
+  }
+
+
+
+
+  /*Diseño detalles del video*/
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+    height: 0;
+    overflow: hidden;
+
+   
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card{
+    margin-bottom: 50px;
+}
+
+
+.boton_comment,
+.boton_comment:hover{
+    background-color: black;
+    border-color: black;
+}
