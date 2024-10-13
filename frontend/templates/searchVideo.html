@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Video</title>
+    <link rel="stylesheet" href="searchVideo.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <!--Navegación-->
+  <nav class="navbar d-flex justify-content-between">
+    <a class="navbar-brand ml-3" href="home.html">
+      Video Platform
+    </a>
+    <div class="d-flex align-items-center">
+      <a class="btn btn-link" href="../AddVideo/FormVideo.html">Add Video</a>
+      <div class="search-wrapper ml-3">
+        <input class="form-control" type="text" id="searchInput" placeholder="Search videos...">
+        <span class="search-icon">&#x1F50D;</span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4" id="videoContainer">
+    <!-- Los videos se cargarán aquí -->
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    async function searchVideos() {
+      const params = new URLSearchParams(window.location.search);
+      const query = params.get('q');
+      if (query) {
+          document.getElementById('searchInput').value = query; // Mostrar el valor de búsqueda en el campo
+          const response = await fetch(`/api/videos/search?query=${encodeURIComponent(query)}`);
+          const videos = await response.json();
+          const videoContainer = document.getElementById('videoContainer');
+          videoContainer.innerHTML = ''; // Limpiar los resultados anteriores
+
+          videos.forEach(video => {
+            const videoCard = `
+              <div class="video-card d-flex">
+                <div class="me-3">
+                  <img src="${video.thumbnail}" alt="Video Thumbnail" class="img-fluid">
+                </div>
+                <div class="info_Video">
+                  <h5>${video.title}</h5>
+                  <p>${video.description}</p>
+                  <small>${video.date} • ${video.views} views • <span>&#x2665;</span></small>
+                </div>
+              </div>
+            `;
+            videoContainer.innerHTML += videoCard;
+          });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', searchVideos);
+  </script>
+</body>
+</html>

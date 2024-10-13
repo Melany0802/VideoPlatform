@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VideoPlatform</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar d-flex justify-content-between" aria-label="Main navigation">
+        <a class="navbar-brand ml-3" href="home.html" aria-label="Go to homepage">
+            Video Platform
+        </a>
+
+        <div class="d-flex align-items-center">
+            <a class="btn btn-link" href="/videos/new" aria-label="Add a new video">Add Video</a>
+            <div class="search-wrapper ml-3">
+                <input class="form-control" type="text" id="searchInput" placeholder="Buscar videos..." aria-label="Search for videos">
+                <button class="btn btn-primary" id="searchButton">Buscar</button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="container mt-5">
+
+    <h3>Top 10 Más Vistos</h3>
+    <div id="topVideosCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" id="topVideosContainer">
+            <!-- Los videos más vistos se cargarán dinámicamente aquí -->
+        </div>
+        <a class="carousel-control-prev" href="#topVideosCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#topVideosCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+    </div>
+
+    <h3 class="mt-5">Top 10 Favoritos Recientes</h3>
+    <div id="favoriteVideosCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" id="favoriteVideosContainer">
+            <!-- Los videos favoritos recientes se cargarán dinámicamente aquí -->
+        </div>
+        <a class="carousel-control-prev" href="#favoriteVideosCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#favoriteVideosCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+    </div>
+
+</main>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Tu JavaScript personalizado -->
+<script src="/static/js/home.js"></script>
+</body>
+</html>
